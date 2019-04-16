@@ -80,8 +80,7 @@ const TodoApp = () => {
 
 <br>
 
-## useFetch 커스텀 훅 만들기
-## 파일 분리하기(코드 )
+## useFetch 커스텀 훅 만들기 / 파일 분리(재사용)
 API와 통신을 위해, 우리는 간단한 커스텀 훅을 만들것 입니다.  
 이는 Fetch API를 사용할 것이며, url과 callBack 함수를 파라미터로 받을 것 입니다.
 
