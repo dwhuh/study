@@ -26,7 +26,7 @@ useEffect는 아래와 같은 라이프 사이클 함수를 합쳐놓은 것과 
 * componentWillUnmount
 ```
 useEffect(() => {
-  // componentDidUpdate
+  // componentDidMount, componentDidUpdate
   window.addEventListener('click', handleClick);
   return () => {
     // componentWillUnmount
