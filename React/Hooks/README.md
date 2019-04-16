@@ -18,15 +18,15 @@ class 선언 없이 state를 사용할 수 있도록 하는 새로운 기능이�
 
 <br>
 
-## useState useEffect
-#### #useState
+## useState, useEffect
+#### useState
 우리가 state를 선언할 때 Hooks는 useState라는 함수를 사용하여 선언할 수 있습니다.  
 useState는 반환되는 값이 배열입니다.
 * 첫 번째 원소는 state의 값
 * 두 번째 원소는 state를 값을 변경해주는 setter 함수
 
 
-#### #useEffect
+#### useEffect
 React Life Cycles를 useEffect를 이용하여 사용할 수 있습니다.  
 useEffect는 아래와 같은 라이프 사이클 함수를 합쳐놓은 것과 같습니다.  
 * componentDidMount
