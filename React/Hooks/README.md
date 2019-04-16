@@ -6,6 +6,7 @@ class 선언 없이 state를 사용할 수 있도록 하는 새로운 기능이�
 
 * [useState](#usestate)
 * [useEffect](#useeffect)
+* [useContext](#usecontext)
 * [useFetch 커스텀 훅, 파일 분리](#usefetch-커스텀-훅-만들기--파일-분리재사용)
 
 <br>
@@ -80,6 +81,57 @@ const TodoApp = () => {
         ))}
       </ul>
     </>
+  );
+};
+```
+
+<br>
+
+## useContext
+React의 Context API와 함께 useContext 라는 메소드를 Context API에 접근할 수 있습니다.  
+기존 Context API에는 하위 컴포넌트에 컨텍스트의 Consumer 컴포넌트를 wrapping 해야 했습니다.  
+이런 wrapping 작업의 수고를 덜어주고 변수에 할당하여 사용할 수 있도록  
+hooks의 useContext 메소드를 이용하여 wrapping 지옥에 빠지지 않고 유지보수에 쉽도록 사용할 수 있습니다.
+
+#### App.js
+먼저 Context API를 생성하는 ```React.createContext()``` 메소드를 사용합니다.  
+외부에서도 생성된 컨텍스트를 사용하기 위해 ```export``` 를 선언해주어야 합니다.  
+컨텍스트를 사용하기 위해  ```<ContextComponent.Provider...```로 wrapping 해주었구요.  
+데이터를 주입시키기 위해 ```value``` props에 ```locale```, ```id```, ```pass``` 데이터를 추가하였습니다.
+```
+export const ContextComponent = React.createContext();
+
+const App = () => (
+  <ContextComponent.Provider value={{
+    locale: 'ko',
+    id: 'user',
+    pass: '1234',
+  }}>
+    <File />
+  </ContextComponent.Provider>
+);
+```
+
+#### File.js
+```
+import React, { useContext } from 'react';
+import { ContextComponent } from '../App.js';
+
+const File = () => {
+  const { locale, id, pass } = useContext(ContextComponent);
+  const locales = {
+    ko: '한국어',
+    en: '영어',
+    zh: '중국어',
+    cn: '캐나다어',
+  };
+
+  return (
+    <ul>
+      <li>사용하는 언어는 {locale} 입니다.</li>
+      <li>아이디는 {id} 입니다.</li>
+      <li>비밀번호는 {pass} 입니다.</li>
+    </ul>
   );
 };
 ```
