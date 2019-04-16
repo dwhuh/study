@@ -4,8 +4,8 @@ class 선언 없이 state를 사용할 수 있도록 하는 새로운 기능이�
 
 <br>
 
-* [useState](#use-state)
-* [useEffect](#use-effect)
+* [useState](#usestate)
+* [useEffect](#useeffect)
 
 <br>
 
