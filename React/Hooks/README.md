@@ -26,7 +26,7 @@ useEffect는 아래와 같은 라이프 사이클 함수를 합쳐놓은 것과 
 * componentWillUnmount
 ```
 useEffect(() => {
-  // componentDidMount, componentDidUpdate
+  // componentDidUpdate
   window.addEventListener('click', handleClick);
   return () => {
     // componentWillUnmount
@@ -48,8 +48,15 @@ const TodoApp = () => {
     e.preventDefault();
     setTodos([...todos, newTodo]);
   };
+  
+  useEffect(() => {
+    // componentDidMount
+    // 두 번째 인자에 빈 배열을 넣으면 componentDidMount 처럼
+    // 컴포넌트가 마운트된 후 처음에만 실행된다.
+  }, []);
 
   useEffect(() => {
+    // componentDidUpdate
     console.log('새롭게 렌더링된 TodoList', todos);
   }, [todos]);
 
