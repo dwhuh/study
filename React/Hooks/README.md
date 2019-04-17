@@ -7,6 +7,7 @@ class 선언 없이 state를 사용할 수 있도록 하는 새로운 기능이�
 * [useState](#usestate)
 * [useEffect](#useeffect)
 * [useContext](#usecontext)
+* [useRef](#useref)
 * [useFetch 커스텀 훅, 파일 분리](#usefetch-커스텀-훅-만들기--파일-분리재사용)
 
 <br>
@@ -132,6 +133,29 @@ const File = () => {
       <li>아이디는 {id} 입니다.</li>
       <li>비밀번호는 {pass} 입니다.</li>
     </ul>
+  );
+};
+```
+
+<br>
+
+## useRef
+함수형 컴포넌트에서 ref 를 간단하게 사용할 수 있습니다.
+```
+import React, { useRef } from 'react';
+
+const Component = ({ onSubmit }) => {
+  const inputRef = useRef('');
+  const onClick = (e) => {
+    e.preventDefault();
+    onSubmit(inputRef.current.value);
+  };
+
+  return (
+    <>
+      <input ref={inputRef} />
+      <button onClick={onClick}>전송</button>
+    </>
   );
 };
 ```
