@@ -12,7 +12,7 @@ ES6 문법이 들어오고나서부터 우리가 이전에 알고있는 자바�
 * [Promises](#promises)
 * [Template literals](#template-literals)
 * [Default Parameters](#default-parameters)
-* [Destructuring / Destructuring Assignment](#destructuring-/-destructuring-assignment)
+* [Destructuring / Destructuring Assignment](#destructuring--destructuring-assignment)
 * [Object Literals](#object-literals)
 * [Spread Operator](#spread-operator)
 * [Fetch API](https://github.com/dwhuh/study/tree/master/JavaScript/FetchAPI)
