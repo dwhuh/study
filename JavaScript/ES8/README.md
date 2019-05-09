@@ -1,5 +1,8 @@
 # ES8(es2017) 문법
 
+## 목차
+* [Async & Await]
+
 ### Async & Await
 
 <br>
@@ -16,4 +19,4 @@
 
 <br>
 
-### 
+### padStart, padEnd
