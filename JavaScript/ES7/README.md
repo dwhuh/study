@@ -7,4 +7,4 @@
 
 <br>
 
-### Exponentiation Operator (**)
+### Exponentiation Operator (**, 거듭제곱)
